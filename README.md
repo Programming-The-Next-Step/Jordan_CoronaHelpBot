@@ -23,10 +23,12 @@ Jordan could be called a therapist without a license, an advisor, a friend when 
 5. tell about your new crush.
 
 *calming down stuff*
+
 6. curse with Jordan - because, let us be honest, this is what we want the chatbots to do really. 
 7. meditating with Jordan.
 
 *corona-related*
+
 6. ask for suggestions to stay sane. This will include going outside for a walk, going to meet a friend or doing some sports. 
 Jordan can also remind you of these things.
 7. discuss how crazy the media is in times of corona. 
