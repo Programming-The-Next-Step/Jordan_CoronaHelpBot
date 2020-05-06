@@ -1,6 +1,6 @@
 # Jordan_CoronaBot
 
-*Jordan is a chatbot that helps you not get crazy in times of corona but if you do, then it is he&she that is here for you.*
+*Jordan is a chatbot that helps you not get crazy in times of corona but if you do, then it is he/she/it that is here for you.*
 
 **Why does Jordan exist?**
 
