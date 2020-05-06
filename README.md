@@ -37,11 +37,7 @@ Jordan can also remind you of these things.
 
 **My Project**
 
-First, I will implement some welcome string that introduces Jordan. 
-In this first opening conversation, there will be some if-else-statements. 
-My goal for this project is to make a chatbot that can give people comfort in times of corona.  
-What I am cutting, if I am short on time is to not implement all modules (conversation types) that I am planning now. 
-But, what I will do, when I have extra time, is to add more modules and things to discuss, and just make Jordan a bit more advanced. 
+First, I will implement some welcome string that introduces Jordan. In this first opening conversation, there will be some if-else-statements. My goal for this project is to make a chatbot that can give people comfort in times of corona. What I am cutting, if I am short on time is to not implement all modules (conversation types) that I am planning now. But, what I will do, when I have extra time, is to add more modules and things to discuss, and just make Jordan a bit more advanced. 
 
 **My Code**
 
