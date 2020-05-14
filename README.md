@@ -36,8 +36,7 @@ Jordan can also remind you of these things.
 
 **Flow Chart**
 
-![]('C:/Users/User/Documents/file2.png')
-
+![Jordan Output Flow](https://user-images.githubusercontent.com/64072862/81957953-92366100-960d-11ea-9d37-abc82e5fd2e9.png)
 
 **My Project**
 
