@@ -1,4 +1,4 @@
-# Jordan_CoronaBot
+# Who is Jordan?
 
 *Jordan is a chatbot that helps you not get crazy in times of corona but if you do, then it is he/she/it that is here for you.*
 
@@ -40,9 +40,20 @@ Jordan can also remind you of these things.
 
 **My Project**
 
-First, I will implement some welcome string that introduces Jordan. In this first opening conversation, there will be some if-else-statements. My goal for this project is to make a chatbot that can give people comfort in times of corona. What I am cutting, if I am short on time is to not implement all modules (conversation types) that I am planning now. But, what I will do, when I have extra time, is to add more modules and things to discuss, and just make Jordan a bit more advanced. 
+My goal for this project is to make a chatbot that can give people comfort in times of corona. What I am cutting, if I am short on time is to not implement all modules (conversation types) that I am planning now. But, what I will do, when I have extra time, is to add more modules and things to discuss, and just make Jordan a bit more advanced. 
+
+Implementation Steps
+1. Create a flow chart of Jordan's output. Actually I did this already, and you can see it above.
+2. Create a function that decodes a sentence grammatically such that it will use an appropriate response. For this step, there might be several smaller functions to be created, for instance, one that converts the grammar aspects like changing from first-person to second-person perspective.
+3. Create an answers library that includes keywords Jordan is supposed to react to. For example, when someone writes 'I need chocolate', 'need', would be such a keyword that Jordan can respond to with 'Why do you think you need chocolate?'?
+4. Create a function that initiates an introduction conversation. This introduction conversation is going to consist of a series of questions that come from a library in which introduction sentences are stored, such as "What is your name?" or "How are you today?"
+5. Create a function, in which the participant can pick a topic to talk about. 
+6. Create an open-question library within the example topic classes. There will be one for cursing with Jordan, one for small talk with Jordan, etc. 
+7. Create a function that ends the conversation that activates once a button is pressed: Quit conversation. Then Jordan asks if you would want to end the conversation or if you want to just change the topic. 
+3. Create a command interface that can be accessed over the browser. I do not know how that works yet, but I guess I will find out. I hope that in the end, there will be a link, on which will lead you to a window in your browser that looks like a chatroom. Maybe a bit more beautiful. Maybe there can be an image of two really comfortable sofas facing each other, while the sun is shining through the window. Warm colors would be nice to make the participant feel more comfortable.
 
 **My Code**
 
-As language, I will use python. For packages, I am not so sure which ones I will use yet. There are some chatbot packages, but I feel like this defeats the purpose of this exercise. 
-I will probably make one function per conversation type. For instance, one for the introduction of Jordan and you. One for the cursing with Jordan, etc. I will also make a function using pygame to develop a browser environment for her. 
+As language, I will use python. For packages, I am going to use pydot to create a flowchart of the Jordan output. I will try to code the chatbot functions myself, which is why I will not use any chatbot-related packages. However, I might use psychopy and the string package. I will probably even use more packages than that, which I do not even know about yet!
+
+eliza.py --> this is a code package on github that I will use as reference. 
