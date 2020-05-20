@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-# Jordan_CoronaBot
-=======
 # Jordan 
->>>>>>> Stashed changes
 
 *Jordan is a chatbot that helps you not get crazy in times of corona but if you do, then it is he/she/it that is here for you.*
 
@@ -49,10 +45,6 @@ First, I will implement some welcome string that introduces Jordan. In this firs
 
 **My Code**
 
-<<<<<<< Updated upstream
-As language, I will use python. For packages, I am not so sure which ones I will use yet. There are some chatbot packages, but I feel like this defeats the purpose of this exercise. 
-I will probably make one function per conversation type. For instance, one for the introduction of Jordan and you. One for the cursing with Jordan, etc. I will also make a function using pygame to develop a browser environment for her. 
-=======
 As language, I will use python. For packages, I am going to use pydot to create a flowchart of the Jordan output. I will try to code the chatbot functions myself, which is why I will not use any chatbot-related packages. However, I might use psychopy and the string package. I will probably even use more packages than that, which I do not even know about yet!
 
 eliza.py --> this is a code package on github that I will use as reference. 
