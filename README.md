@@ -36,7 +36,7 @@ Jordan can also remind you of these things.
 
 **Flow Chart**
 
-![]('C:/Users/User/Documents/file2.png')
+![Jordan Output Flow](https://user-images.githubusercontent.com/64072862/81957953-92366100-960d-11ea-9d37-abc82e5fd2e9.png)
 
 
 **My Project**
@@ -52,7 +52,7 @@ eliza.py --> this is a code package on github that I will use as reference.
 I will also use the random and re module. 
 
 
-** References **
+**References**
 
 Jordan is adapted from the therapy chatbot "Eliza"
 Wikipedia: https://de.wikipedia.org/wiki/ELIZA
@@ -67,4 +67,3 @@ https://github.com/wadetb/eliza/blob/master/eliza.py
 https://data-flair.training/blogs/python-chatbot-project/
 
 https://github.com/codeanticode/eliza/blob/master/examples/ElizaChat/ElizaChat.pde
->>>>>>> Stashed changes
