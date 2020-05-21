@@ -1,5 +1,9 @@
-## make a flow chart of Jordan Output
+# -*- coding: utf-8 -*-
+"""
+Created on Wed May 13 17:02:57 2020
 
+@author: User
+"""
 import pydot
 
 graph = pydot.Dot(graph_type='digraph')
@@ -67,84 +71,3 @@ graph.add_edge(pydot.Edge(node_c2, node_e2))
 graph.add_edge(pydot.Edge(node_e, node_b, label="alternatively go back to picking a topic", labelfontcolor="#009933", fontsize="10.0", color="blue"))
 
 graph.write_png('C:/Users/User/Documents/file2.png')
-
-## make a Jordan function
-
-class Jordan
-    def Jordan(input):
-
-
-# initiate introduction
-
-from psychopy.event import waitKeys
-
-def intro(word):
-    word = 'ENTER'
-    word.waitKeys(5)
-    return 'Welcome. I am Jordan. What is your name?'
-
-# open questions library
-
-openQuestions = [
-    []]
-
-# curse words library
-
-
-
-# open answers library 
-
-openAnswers = [
-    []]
-
-# from first to second person translation library
-
-2ndPersonPerspective = {
-  "am"   : "are",
-  "was"  : "were",
-  "i"    : "you",
-  "i'd"  : "you would",
-  "i've"  : "you have",
-  "i'll"  : "you will",
-  "my"  : "your",
-  "are"  : "am",
-  "you've": "I have",
-  "you'll": "I will",
-  "your"  : "my",
-  "yours"  : "mine",
-  "you"  : "me",
-  "me"  : "you"
-}
-
-
-## tokenize: part sentence into its single words
-# 'and', cc = coordinating conjunction 
-# 'now', rb = adverb 
-# 'for', in = preposition 
-# 'something', nn = noun
-# 'different', jj = adjective 
-# 'obtain', vb = verb
-# 'they', = 
-# 'the', dt = determiner
-# 'to', to = 
-sentence = 'something something'
-tokens = nltk.word_tokenize(sentence)
-tokens
-
-# say what kind of word it is 
-tagged = nltk.pos_tag(tokens)
-tagged[0:2]
-
-# say what kind if word it is
-nltk.download('maxent_ne_chunker')
-nltk.download('words')
-entities = nltk.chunk.ne_chunk(tagged)
-entities
-
-
-# user interface
-
-import tkinter
-from tkinter import *
-
-
