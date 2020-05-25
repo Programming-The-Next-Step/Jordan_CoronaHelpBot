@@ -58,8 +58,6 @@ As language, I will use python. For packages, I am going to use pydot to create 
 
 **And here is a picture of Jordan so you know how it looks like approximately**
 
-eliza.py --> this is a code package on github that I will use as reference. 
-
 ![JordanImage](https://user-images.githubusercontent.com/64072862/82821527-90d62580-9ea4-11ea-809d-895a7b90f7b1.PNG)
 
 **References**
