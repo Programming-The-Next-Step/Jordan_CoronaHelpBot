@@ -56,11 +56,13 @@ Implementation Steps
 
 As language, I will use python. For packages, I am going to use pydot to create a flowchart of the Jordan output. I will try to code the chatbot functions myself, which is why I will not use any chatbot-related packages. However, I might use psychopy and the string package. I will probably even use more packages than that, which I do not even know about yet!
 
+**And here is a picture of Jordan so you know how it looks like approximately**
+
 eliza.py --> this is a code package on github that I will use as reference. 
 
 ![JordanImage](https://user-images.githubusercontent.com/64072862/82821527-90d62580-9ea4-11ea-809d-895a7b90f7b1.PNG)
 
-References
+**References**
 
 Jordan is adapted from the therapy chatbot "Eliza" Wikipedia: https://de.wikipedia.org/wiki/ELIZA Inventor: J. Weizenbaum, ELIZA - A Computer Program For the Study of Natural Language Communication Between Man And Machine Communications of the ACM, Vol 9, No 1, January 1966
 
