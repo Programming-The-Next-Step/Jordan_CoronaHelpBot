@@ -17,10 +17,8 @@ Jordan could be called a therapist without a license, an advisor, a friend when 
 
 *general*
 1. hold smalltalk.
-2. complain about your day.
-3. tell about your deepest worries, your aching heart, your destroyed soul.
-4. tell about how wonderful you feel today.
-5. tell about your new crush.
+2. tell about your deepest worries, your aching heart, your destroyed soul.
+3. Tell about how well you are feeling today.
 
 *calming down stuff*
 
