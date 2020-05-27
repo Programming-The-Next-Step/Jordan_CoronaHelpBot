@@ -39,7 +39,7 @@ class Jordan:
         function that initiates a talk with Jordan about corona
     """
     
-    def __init__(self):
+    def __init__(self, userInput):
         """
         This function is to determine attributes, 
         which can be applied in Jordan's topic functions.
@@ -67,9 +67,9 @@ class Jordan:
         while True:
             # I think it would be nice (but not necessary) to have something like while user_wants_to_quit == False:
             userInput = input(">>> ")
-            resp = "I did not understand what you said" # initalize this
+            resp = "I did not understand what you said, I am case sensitive and I need punctuation." # initalize this
             counter = 0  # initalize this
-            while resp == "I did not understand what you said" and counter < len(Jordan.keys_smalltalk):
+            while resp == "I did not understand what you said, I am case sensitive and I need punctuation." and counter < len(Jordan.keys_smalltalk):
                 for i in range(0, len(Jordan.keys_smalltalk)):
                     match = Jordan.keys_smalltalk[i].match(userInput)
                     if match:
@@ -88,9 +88,9 @@ class Jordan:
         
         while True:
             userInput = input(">>>")
-            resp = "I did not understand what you said" # initalize this
+            resp = "I did not understand what you said, I am case sensitive and I need punctuation." # initalize this
             counter = 0  # initalize this
-            while resp == "I did not understand what you said" and counter < len(Jordan.keys_caring):
+            while resp == "I did not understand what you said, I am case sensitive and I need punctuation." and counter < len(Jordan.keys_caring):
                 for i in range(0, len(Jordan.keys_caring)):
                     match = Jordan.keys_caringg[i].match(userInput)
                     if match:
@@ -107,9 +107,9 @@ class Jordan:
         """
         while True:
             userInput = input(">>> ")
-            resp = "I did not understand what you said" # initalize this
+            resp = "I did not understand what you said, I am case sensitive and I need punctuation, I am case sensitive and I need punctuation.." # initalize this
             counter = 0  # initalize this
-            while resp == "I did not understand what you said" and counter < len(Jordan.keys_cursing):
+            while resp == "I did not understand what you said, I am case sensitive and I need punctuation." and counter < len(Jordan.keys_cursing):
                 for i in range(0, len(Jordan.keys_cursing)):
                     match = Jordan.keys_cursing[i].match(userInput)
                     if match:
@@ -128,9 +128,9 @@ class Jordan:
         """
         while True:
             userInput = input(">>> ")
-            resp = "I did not understand what you said" # initalize this
+            resp = "I did not understand what you said, I am case sensitive and I need punctuation." # initalize this
             counter = 0  # initalize this
-            while resp == "I did not understand what you said" and counter < len(Jordan.keys_corona):
+            while resp == "I did not understand what you said, I am case sensitive and I need punctuation." and counter < len(Jordan.keys_corona):
                 for i in range(0, len(Jordan.keys_corona)):
                     match = Jordan.keys_corona[i].match(userInput)
                     if match:
@@ -139,4 +139,23 @@ class Jordan:
                         
             print(resp)
 
-Jordan.caring_Jordan('')
+    def meditating_Jordan(self):
+
+        """
+        
+        A function to meditate with Jordan as your guide.
+        
+        """
+        while True:
+            userInput = input(">>> ")
+            resp = "I did not understand what you said, I am case sensitive and I need punctuation." # initalize this
+            counter = 0  # initalize this
+            while resp == "I did not understand what you said, I am case sensitive and I need punctuation." and counter < len(Jordan.keys_meditating):
+                for i in range(0, len(Jordan.keys_meditating)):
+                    match = Jordan.keys_meditating[i].match(userInput)
+                    if match:
+                        resp = random.choice(Jordan.values_meditating[i])
+                    counter += 1
+                    
+                        
+            print(resp)
