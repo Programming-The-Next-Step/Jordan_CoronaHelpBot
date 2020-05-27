@@ -8,6 +8,7 @@ import re # importing regular expression operations, which we need later to acce
 import random # later we want to pick a chatbot answer to a statement by random
 from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating
 # and here we imported all the topic libraries
+from playsound import playsound
       
       
 class Jordan:
@@ -39,7 +40,7 @@ class Jordan:
         function that initiates a talk with Jordan about corona
     """
     
-    def __init__(self, userInput): # this function is always called when a new object of the class is called
+    def __init__(self): # this function is always called when a new object of the class is called
         """
         This function is to determine attributes, 
         which can be applied in Jordan's topic functions.
@@ -58,7 +59,9 @@ class Jordan:
         self.values_cursing = list(map(lambda x:x[1],library_cursing))
         self.keys_corona = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library_corona))
         self.values_corona = list(map(lambda x:x[1],library_corona))
-    
+        self.keys_meditating = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library_meditating))
+        self.values_meditating = list(map(lambda x:x[1],library_meditating))
+        
     def smalltalk_Jordan(self):
         """
         
@@ -73,10 +76,17 @@ class Jordan:
                 for i in range(0, len(self.keys_smalltalk)):  # loop through the indexed library
                     match = self.keys_smalltalk[i].match(userInput) # look if input of the user matches with one of the words in the library
                     if match: 
+                        word = self.keys_smalltalk[i].split(userInput)[1]  # We have to take the first element of this list                        
                         resp = random.choice(self.values_smalltalk[i]) # if there is a match, pick a random answer from x[1]
                     counter += 1 # make sure that the counter is now + 1 so it does not write the initialized response from the beginning but continues with the loop.
                                  # if there is no match though, then it will write the initialized answer
-                        
+            if userInput == 'q':
+                print(random.choice(self.values_smalltalk[i]))
+                print("---------------------------------")
+                print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
+                print("---------------------------------")
+                break                                
+            resp = resp.format(word) # replace if applicable      
             print(resp) # print response
                 
     def caring_Jordan(self):
@@ -95,9 +105,16 @@ class Jordan:
                 for i in range(0, len(self.keys_caring)):
                     match = self.keys_caring[i].match(userInput)
                     if match:
+                        word = self.keys_caring[i].split(userInput)[1]  # We have to take the first element of this list
                         resp = random.choice(self.values_caring[i])
                     counter += 1
-                        
+            if userInput == 'q':
+                print(random.choice(self.values_caring[i]))
+                print("---------------------------------")
+                print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
+                print("---------------------------------")
+                break
+            resp = resp.format(word) # replace if applicable                   
             print(resp)
             
     def cursing_Jordan(self):
@@ -114,9 +131,16 @@ class Jordan:
                 for i in range(0, len(self.keys_cursing)):
                     match = self.keys_cursing[i].match(userInput)
                     if match:
+                        word = self.keys_caring[i].split(userInput)[1]  # We have to take the first element of this list                        
                         resp = random.choice(self.values_cursing[i])
                     counter += 1
-                        
+            if userInput == 'q':
+                print(random.choice(self.values_cursing[i]))
+                print("---------------------------------")
+                print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
+                print("---------------------------------")
+                break                   
+            resp = resp.format(word) # replace if applicable                     
             print(resp)
                 
     def corona_Jordan(self):
@@ -135,9 +159,16 @@ class Jordan:
                 for i in range(0, len(self.keys_corona)):
                     match = self.keys_corona[i].match(userInput)
                     if match:
+                        word = self.keys_caring[i].split(userInput)[1]  # We have to take the first element of this list                        
                         resp = random.choice(self.values_corona[i])
                     counter += 1
-                        
+            if userInput == 'q':
+                print(random.choice(self.values_corona[i]))
+                print("---------------------------------")
+                print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
+                print("---------------------------------")
+                break
+            resp = resp.format(word) # replace if applicable            
             print(resp)
 
     def meditating_Jordan(self):
@@ -155,6 +186,17 @@ class Jordan:
                 for i in range(0, len(self.keys_meditating)):
                     match = self.keys_meditating[i].match(userInput)
                     if match:
+                        word = self.keys_caring[i].split(userInput)[1]  # We have to take the first element of this list                        
                         resp = random.choice(self.values_meditating[i])
-                    counter += 1                               
+                    counter += 1
+            if userInput == 'q':
+                print(random.choice(self.values_meditating[i]))
+                print("---------------------------------")
+                print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
+                print("---------------------------------")
+                break
+            resp = resp.format(word) # replace if applicable
             print(resp)
+            
+
+# playsound("C:/Users/User/Downloads/Meditation.mp3")
