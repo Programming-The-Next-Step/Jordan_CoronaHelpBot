@@ -5,25 +5,6 @@
 ##########################################################
 
 
-# this dictionary will be used to translate first person into 2nd person.
-gReflections = {
-    "am"   : "are",
-    "was"  : "were",
-    "i"    : "you",
-    "i'd"  : "you would",
-    "i've"  : "you have",
-    "i'll"  : "you will",
-    "my"  : "your",
-    "are"  : "am",
-    "you've": "I have",
-    "you'll": "I will",
-    "your"  : "my",
-    "yours"  : "mine",
-    "you"  : "me",
-    "me"  : "you"
-    }
-
-
 
 ##############################
 ##                          ##
@@ -33,10 +14,8 @@ gReflections = {
 
 ## create the library for small-talk with Jordan
 library_smalltalk = [
-    [r'Hi(.*)',
-     [  "Hi, how are you?",
-      "Hey, whazzup?",
-      "Hello you!"]],
+    [r'Hi(.*).',
+     [  "Hi, {}."]],
     
     [r'Hello(.*)',
      [  "Hi, how are you?",
@@ -94,8 +73,8 @@ library_smalltalk = [
     
     [r'I want (.*)',
      [  "Yeah, me too!",
-      "Why do you want %1?",
-      "What would you do if you got %1?",
+      "Why do you want {}",
+      "What would you do if you got {}",
       "If you got %1, then what would you do?"]],
     
     [r'How are you (.*)',
@@ -176,39 +155,39 @@ library_caring = [
       "Oh no!"]],
     
     [r'I need (.*)',
-     [  "Why do you need %1?",
-      "Would it really help you to get %1?",
-      "Are you sure you need %1?"]],
+     [  "Why do you need {}",
+      "Would it really help you to get {}",
+      "Are you sure you need {}"]],
     
     [r'Why don\'?t you ([^\?]*)\??',
-     [  "Do you really think I don't %1?",
+     [  "Do you really think I don't {}",
       "Perhaps eventually I will %1.",
-      "Do you really want me to %1?"]],
+      "Do you really want me to {}"]],
     
     [r'Why can\'?t I ([^\?]*)\??',
-     [  "Do you think you should be able to %1?",
+     [  "Do you think you should be able to {}",
       "If you could %1, what would you do?",
-      "I don't know -- why can't you %1?",
+      "I don't know -- why can't you {}",
       "Have you really tried?"]],
     
     [r'I can\'?t (.*)',
-     [  "How do you know you can't %1?",
+     [  "How do you know you can't {}",
       "Perhaps you could %1 if you tried.",
-      "What would it take for you to %1?"]],
+      "What would it take for you to {}"]],
     
     [r'I am (.*)',
-     [  "Did you come to me because you are %1?",
-      "How do you feel about being %1?"]],
+     [  "Did you come to me because you are {}",
+      "How do you feel about being {}"]],
     
     [r'I\'?m (.*)',
      [  "How does being %1 make you feel?",
-      "Do you enjoy being %1?",
-      "Why do you tell me you're %1?",
-      "Why do you think you're %1?"]],
+      "Do you enjoy being {}",
+      "Why do you tell me you're {}",
+      "Why do you think you're {}"]],
     
     [r'Are you ([^\?]*)\??',
-     [  "Why does it matter whether I am %1?",
-      "Would you prefer it if I were not %1?",
+     [  "Why does it matter whether I am {}",
+      "Would you prefer it if I were not {}",
       "Perhaps you believe I am %1.",
       "I may be %1 -- what do you think?"]],
     
@@ -238,9 +217,9 @@ library_caring = [
       "Hello, how are you feeling today?"]],
     
     [r'I think (.*)',
-     [  "Do you doubt %1?",
+     [  "Do you doubt {}",
       "Do you really think so?",
-      "But you're not sure %1?"]],
+      "But you're not sure {}"]],
     
     [r'(.*) friend (.*)',
      [  "Tell me more about your friends.",
@@ -258,7 +237,7 @@ library_caring = [
       "Do you feel threatened by computers?"]],
     
     [r'Is it (.*)',
-     [  "Do you think it is %1?",
+     [  "Do you think it is {}",
       "Perhaps it's %1 -- what do you think?",
       "If it were %1, what would you do?",
       "It could well be that %1."]],
@@ -268,69 +247,69 @@ library_caring = [
       "If I told you that it probably isn't %1, what would you feel?"]],
     
     [r'Can you ([^\?]*)\??',
-     [  "What makes you think I can't %1?",
+     [  "What makes you think I can't {}",
       "If I could %1, then what?",
-      "Why do you ask if I can %1?"]],
+      "Why do you ask if I can {}"]],
     
     [r'Can I ([^\?]*)\??',
      [  "Perhaps you don't want to %1.",
-      "Do you want to be able to %1?",
+      "Do you want to be able to {}",
       "If you could %1, would you?"]],
     
     [r'You are (.*)',
-      [ "Why do you think I am %1?",
-       "Does it please you to think that I'm %1?",
+      [ "Why do you think I am {}",
+       "Does it please you to think that I'm {}",
        "Perhaps you would like me to be %1.",
        "Perhaps you're really talking about yourself?"]],
 
     [r'You\'?re (.*)',
-     [  "Why do you say I am %1?",
-      "Why do you think I am %1?",
+     [  "Why do you say I am {}",
+      "Why do you think I am {}",
       "Are we talking about you, or me?"]],
     
     [r'I don\'?t (.*)',
-     [  "Don't you really %1?",
-      "Why don't you %1?",
-      "Do you want to %1?"]],
+     [  "Don't you really {}",
+      "Why don't you {}",
+      "Do you want to {}"]],
     
     [r'I feel (.*)',
      [  "Good, tell me more about these feelings.",
-      "Do you often feel %1?",
-      "When do you usually feel %1?",
+      "Do you often feel {}",
+      "When do you usually feel {}",
       "When you feel %1, what do you do?"]],
     
     [r'I have (.*)',
-     [  "Why do you tell me that you've %1?",
-      "Have you really %1?",
+     [  "Why do you tell me that you've {}",
+      "Have you really {}",
       "Now that you have %1, what will you do next?"]],
     
     [r'I would (.*)',
-     [  "Could you explain why you would %1?",
-      "Why would you %1?",
-      "Who else knows that you would %1?"]],
+     [  "Could you explain why you would {}",
+      "Why would you {}",
+      "Who else knows that you would {}"]],
     
     [r'Is there (.*)',
-     [  "Do you think there is %1?",
+     [  "Do you think there is {}",
       "It's likely that there is %1.",
-      "Would you like there to be %1?"]],
+      "Would you like there to be {}"]],
     
     [r'My (.*)',
      [  "I see, your %1.",
-      "Why do you say that your %1?",
+      "Why do you say that your {}",
       "When your %1, how do you feel?"]],
     
     [r'You (.*)',
      [  "We should be discussing you, not me.",
-      "Why do you care whether I %1?"]],
+      "Why do you care whether I {}"]],
     
     [r'Why (.*)',
-     [  "Why don't you tell me the reason why %1?",
-      "Why do you think %1?" ]],
+     [  "Why don't you tell me the reason why {}",
+      "Why do you think {}" ]],
     
     [r'I want (.*)',
-     [  "What would it mean to you if you got %1?",
-      "Why do you want %1?",
-      "What would you do if you got %1?",
+     [  "What would it mean to you if you got {}",
+      "Why do you want {}",
+      "What would you do if you got {}",
       "If you got %1, then what would you do?"]],
     
     [r'(.*) mother(.*)',
@@ -406,9 +385,9 @@ library_cursing = [
       "What are you lookin at, idiot?"]],
     
     [r'You are a (.*)',
-     [  "YOU are a %1?",
+     [  "YOU are a {}",
       "Right back at ya.",
-      "Your mother is a %1?"]],
+      "Your mother is a {}"]],
     
     [r'(.*)\!',
      [ "You’re the reason God created the middle finger.",
@@ -438,7 +417,7 @@ library_cursing = [
 
     [r'Are you ([^\?]*)\??',
      [  "OH MY GOD! IT SPEAKS!",
-      "Are YOU %1??",
+      "Are YOU {}?",
       "Are you talking to yourself?"]],
     
     [r'(.*) sorry (.*)',
@@ -450,19 +429,19 @@ library_cursing = [
       "You’re the reason God created the middle finger."]],
 
     [r'You are (.*)',
-      [ "YOU are %1?",
+      [ "YOU are {}",
       "Right back at ya.",
-      "Your mother is %1?"]],
+      "Your mother is {}"]],
 
     [r'You\'?re (.*)',
-     [  "YOU are %1?",
+     [  "YOU are {}",
       "Right back at ya.",
-      "Your mother is %1?"]],
+      "Your mother is {}"]],
 
     [r'You (.*)',
-     [  "YOU %1?",
+     [  "YOU {}",
       "Right back at ya.",
-      "Your mother %1?s"]],
+      "Your mother {}s"]],
     
     [r'q',
      [  "Thank you for talking with me, dipshit.",
@@ -481,48 +460,36 @@ library_cursing = [
 library_meditating = [
 
     [r'Hi(.*)',
-     [  "Welcome. Please bring yourself i a comfortable position. You can sit or lie down. Press "]],
+     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Hello(.*)',
-     [  "I hate you.",
-      "What do you want, idiot?",
-      "What are you lookin at, idiot?"]],
+     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Hey(.*)',
-     [  "I hate you.",
-      "What do you want, idiot?",
-      "What are you lookin at, idiot?"]],
+     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Yo(.*)',
-     [  "I hate you.",
-      "What do you want, idiot?",
-      "What are you lookin at, idiot?"]],
+     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
     
     
-    [r'Why can\'?t I ([^\?]*)\??',
-     [  "Do you think you should be able to %1?",
-      "If you could %1, what would you do?",
-      "I don't know -- why can't you %1?",
-      "Have you really tried?"]],
+    [r'I am ready.',
+     ["Great. First of all, I would like you to take deep breaths with your eyes closed for about 10 minutes (you can set a timer). \n\ While you are breathing, examine all your body parts from head, \n\ over your shoulders, your belly, your legs and your feet. \n\ Determine how each and every of these feel today. When you're done, type 'I am done.'" ]],
     
-    [r'I can\'?t (.*)',
-     [  "How do you know you can't %1?",
-      "Perhaps you could %1 if you tried.",
-      "What would it take for you to %1?"]],
+    [r'I am done.',
+     [ "Nice work. Next, bring yourself in a cross-legged position, if you aren't yet, and think about three things that you like about yourself \n\ and three things that you like about your life right now. \n\ With your arms make a giving gesture first to yourself and then into the room while breathing in and out. \n\ With each pair of gestures, think about one positive thing you just thought of. \n\ When you are ready with this you can either repeat it or type 'Next exercise.'." ]],
     
-    [r'I am (.*)',
-     [  "Did you come to me because you are %1?",
-      "How do you feel about being %1?"]],
+    [r'Next exercise.',
+     [  "Now let's look at this breathing a bit more closely. \n\ Repeat the following 10 times: Inhale for 4 seconds, hold your breath for 7 seconds, exhale for 8 seconds. When you are ready, you can go to the last exercise by typing 'last exercise'.'"]],
     
-    [r'I\'?m (.*)',
+    [r'Continue',
      [  "How does being %1 make you feel?",
-      "Do you enjoy being %1?",
-      "Why do you tell me you're %1?",
-      "Why do you think you're %1?"]],
+      "Do you enjoy being {}",
+      "Why do you tell me you're {}",
+      "Why do you think you're {}"]],
     
     [r'Are you ([^\?]*)\??',
-     [  "Why does it matter whether I am %1?",
-      "Would you prefer it if I were not %1?",
+     [  "Why does it matter whether I am {}",
+      "Would you prefer it if I were not {}",
       "Perhaps you believe I am %1.",
       "I may be %1 -- what do you think?"]],
     
@@ -552,9 +519,9 @@ library_meditating = [
       "Hello, how are you feeling today?"]],
     
     [r'I think (.*)',
-     [  "Do you doubt %1?",
+     [  "Do you doubt {}",
       "Do you really think so?",
-      "But you're not sure %1?"]],
+      "But you're not sure {}"]],
     
     [r'(.*) friend (.*)',
      [  "Tell me more about your friends.",
@@ -572,7 +539,7 @@ library_meditating = [
       "Do you feel threatened by computers?"]],
     
     [r'Is it (.*)',
-     [  "Do you think it is %1?",
+     [  "Do you think it is {}",
       "Perhaps it's %1 -- what do you think?",
       "If it were %1, what would you do?",
       "It could well be that %1."]],
@@ -582,69 +549,69 @@ library_meditating = [
       "If I told you that it probably isn't %1, what would you feel?"]],
     
     [r'Can you ([^\?]*)\??',
-     [  "What makes you think I can't %1?",
+     [  "What makes you think I can't {}",
       "If I could %1, then what?",
-      "Why do you ask if I can %1?"]],
+      "Why do you ask if I can {}"]],
     
     [r'Can I ([^\?]*)\??',
      [  "Perhaps you don't want to %1.",
-      "Do you want to be able to %1?",
+      "Do you want to be able to {}",
       "If you could %1, would you?"]],
     
     [r'You are (.*)',
-      [ "Why do you think I am %1?",
-       "Does it please you to think that I'm %1?",
+      [ "Why do you think I am {}",
+       "Does it please you to think that I'm {}",
        "Perhaps you would like me to be %1.",
        "Perhaps you're really talking about yourself?"]],
 
     [r'You\'?re (.*)',
-     [  "Why do you say I am %1?",
-      "Why do you think I am %1?",
+     [  "Why do you say I am {}",
+      "Why do you think I am {}",
       "Are we talking about you, or me?"]],
     
     [r'I don\'?t (.*)',
-     [  "Don't you really %1?",
-      "Why don't you %1?",
-      "Do you want to %1?"]],
+     [  "Don't you really {}",
+      "Why don't you {}",
+      "Do you want to {}"]],
     
     [r'I feel (.*)',
      [  "Good, tell me more about these feelings.",
-      "Do you often feel %1?",
-      "When do you usually feel %1?",
+      "Do you often feel {}",
+      "When do you usually feel {}",
       "When you feel %1, what do you do?"]],
     
     [r'I have (.*)',
-     [  "Why do you tell me that you've %1?",
-      "Have you really %1?",
+     [  "Why do you tell me that you've {}",
+      "Have you really {}",
       "Now that you have %1, what will you do next?"]],
     
     [r'I would (.*)',
-     [  "Could you explain why you would %1?",
-      "Why would you %1?",
-      "Who else knows that you would %1?"]],
+     [  "Could you explain why you would {}",
+      "Why would you {}",
+      "Who else knows that you would {}"]],
     
     [r'Is there (.*)',
-     [  "Do you think there is %1?",
+     [  "Do you think there is {}",
       "It's likely that there is %1.",
-      "Would you like there to be %1?"]],
+      "Would you like there to be {}"]],
     
     [r'My (.*)',
      [  "I see, your %1.",
-      "Why do you say that your %1?",
+      "Why do you say that your {}",
       "When your %1, how do you feel?"]],
     
     [r'You (.*)',
      [  "We should be discussing you, not me.",
-      "Why do you care whether I %1?"]],
+      "Why do you care whether I {}"]],
     
     [r'Why (.*)',
-     [  "Why don't you tell me the reason why %1?",
-      "Why do you think %1?" ]],
+     [  "Why don't you tell me the reason why {}",
+      "Why do you think {}" ]],
     
     [r'I want (.*)',
-     [  "What would it mean to you if you got %1?",
-      "Why do you want %1?",
-      "What would you do if you got %1?",
+     [  "What would it mean to you if you got {}",
+      "Why do you want {}",
+      "What would you do if you got {}",
       "If you got %1, then what would you do?"]],
     
     [r'(.*) mother(.*)',
@@ -717,19 +684,19 @@ library_corona = [
       "Do you have someone to talk to except me?."]],
 
     [r'I don\'?t (.*)',
-     [  "Don't you really %1?",
-      "Why don't you %1?",
-      "Do you want to %1?"]],
+     [  "Don't you really {}",
+      "Why don't you {}",
+      "Do you want to {}"]],
     
     [r'I feel (.*)',
      [  "Good, tell me more about these feelings.",
-      "Do you often feel %1?",
-      "When do you usually feel %1?",
+      "Do you often feel {}",
+      "When do you usually feel {}",
       "When you feel %1, what do you do?"]],
     
     [r'I have (.*)',
-     [  "Why do you tell me that you've %1?",
-      "Have you really %1?",
+     [  "Why do you tell me that you've {}",
+      "Have you really {}",
       "Now that you have %1, what will you do next?"]],
     
     [r'(.*)\?',
@@ -738,14 +705,14 @@ library_corona = [
       "Why don't you tell me?"]],
     
     [r'I would (.*)',
-     [  "Could you explain why you would %1?",
-      "Why would you %1?",
-      "Who else knows that you would %1?"]],
+     [  "Could you explain why you would {}",
+      "Why would you {}",
+      "Who else knows that you would {}"]],
     
     [r'Is there (.*)',
-     [  "Do you think there is %1?",
+     [  "Do you think there is {}",
       "It's likely that there is %1.",
-      "Would you like there to be %1?"]],
+      "Would you like there to be {}"]],
     
     [r'q',
      [  "Thank you for talking with me, and #staysafe!",
