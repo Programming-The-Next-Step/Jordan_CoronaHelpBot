@@ -7,14 +7,12 @@ Created on Fri May 22 18:15:13 2020
 import re # importing regular expression operations, which we need later to access the libraries
 import random # later we want to pick a chatbot answer to a statement by random
 from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating
-# and here we imported all the topic libraries
-from playsound import playsound
-      
+# and here we imported all the topic libraries      
       
 class Jordan:
     """
-    A class containing Jordans skills.
-    
+    A class that enables different topics to chat about with Jordan.
+    It's recommended to not set any different properties.'
     ...
     
     Attributes 
@@ -27,8 +25,19 @@ class Jordan:
         Nested lists with strings
     keys_corona : list
         Nested lists with strings
-    
-    Methods (Functions)
+    keys_meditating : list
+        Nested lists with strings
+    values_smalltalk : list
+        Nested lists with strings
+    values_cursing : list
+        Nested lists with strings
+    values_caring : list
+        Nested lists with strings
+    values_corona : list
+        Nested lists with strings
+    values_meditating : list
+        Nested lists with strings  
+    Methods 
     ----------
     smalltalk_Jordan(userInput)
         function that initiates small-talk with Jordan
@@ -42,8 +51,7 @@ class Jordan:
     
     def __init__(self): # this function is always called when a new object of the class is called
         """
-        This function is to determine attributes, 
-        which can be applied in Jordan's topic functions.
+        Constructs the Jordan class. Takes no arguments.
         
         """
         
