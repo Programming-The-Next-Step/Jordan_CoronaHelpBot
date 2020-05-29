@@ -12,7 +12,7 @@ from Jordan_Libraries import library_cursing # import libraries
 
 def testing_Jordan(): 
     keys_cursing = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library_cursing)) 
-    # list(map()) applies a function to all elements of a specified object, in this case the small-talk library
+    # list(map()) applies a function to all elements of a specified object, in this case the cursing library
     # lambda makes sure that re.compile is applied in a certain way to all elements of the library without being case-sensitive
     # re.compile makes sure that the elemets are turned into objects that can be matched later to another item in the library    
     values_cursing = list(map(lambda x:x[1],library_cursing))
