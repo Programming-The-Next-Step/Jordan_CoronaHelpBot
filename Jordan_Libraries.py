@@ -570,10 +570,10 @@ library_corona = [
     [r'(.*) shit (.*)',
      [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
     
-    [r'crazy world'
+    [r'crazy world',
      [   "The media is crazy right?",
-      "Did you see what Trump posted on Twitter today?"
-      "Man, the economy will friggin die."
+      "Did you see what Trump posted on Twitter today?",
+      "Man, the economy will friggin die.",
       "Doing some sports could help as well!"]],  
 
     [r'(.*) yes (.*)',
@@ -777,7 +777,7 @@ library_corona = [
       "%1.",
       "I see.  And what does that tell you?",
       "How does that make you feel?",
-      "How do you feel when you say that?"]]
+      "How do you feel when you say that?"]],
     
     [r'q',
      [  "Thank you for talking with me, and #staysafe!",
