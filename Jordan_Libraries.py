@@ -13,9 +13,10 @@
 ##############################
 
 ## create the library for small-talk with Jordan
+# I created the content mainly myself based on letting other people talk with Jordan and see what they would ask
 library_smalltalk = [
     [r'Hi(.*).',
-     [  "Hi, {}."]],
+     [  "Hi! Whazzup?"]],
     
     [r'Hello(.*)',
      [  "Hi, how are you?",
@@ -122,6 +123,7 @@ library_smalltalk = [
 ##########################################
 
 ## create the library to talk with Jordan about your sorrows
+# This content is mainly taken from the eliza.py package
 library_caring = [
     
     [r'Hi(.*)',
@@ -361,7 +363,9 @@ library_caring = [
 ##                     ##
 #########################
 
-## create library for cursing with Jordan
+## create library for cursing with Jordan aka evil Jordan
+# The content of this library is based on movies, books, and several internet sources
+
 library_cursing = [
     
     [r'Hi(.*)',
@@ -457,66 +461,186 @@ library_cursing = [
 ##########################################
 
 ## create the library to talk with Jordan about your sorrows
+# The content of this library is based on  my memory of when I did some courses on meditating and mindfulness
+
 library_meditating = [
 
     [r'Hi(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n\ You can sit or lie down. Write 'I am ready' to continue."]],
     
     [r'Hello(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n\ You can sit or lie down. Write 'I am ready' to continue."]],
     
     [r'Hey(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n\ You can sit or lie down. Write 'I am ready' to continue."]],
     
     [r'Yo(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. You can sit or lie down. Write 'I am ready.' to continue."]],
-    
+     [  "Welcome. Please bring yourself into a comfortable position. \n\ You can sit or lie down. Write 'I am ready' to continue."]],
     
     [r'I am ready.',
-     ["Great. First of all, I would like you to take deep breaths with your eyes closed for about 10 minutes (you can set a timer). \n\ While you are breathing, examine all your body parts from head, \n\ over your shoulders, your belly, your legs and your feet. \n\ Determine how each and every of these feel today. When you're done, type 'I am done.'" ]],
+     ["Great. First of all, I would like you to take deep breaths with your eyes closed for about 10 minutes (you can set a timer). \n\ While you are breathing, examine all your body parts from head, \n\ over your shoulders, your belly, your legs and your feet. \n\ Determine how each and every of these feel today. When you're done, type 'I am done'" ]],
     
     [r'I am done.',
-     [ "Nice work. Next, bring yourself in a cross-legged position, if you aren't yet, and think about three things that you like about yourself \n\ and three things that you like about your life right now. \n\ With your arms make a giving gesture first to yourself and then into the room while breathing in and out. \n\ With each pair of gestures, think about one positive thing you just thought of. \n\ When you are ready with this you can either repeat it or type 'Next exercise.'." ]],
+     [ "Nice work. Next, bring yourself in a cross-legged position, if you aren't yet, and think about three things that you like about yourself \n\ and three things that you like about your life right now. \n\ With your arms make a giving gesture first to yourself and then into the room while breathing in and out. \n\ With each pair of gestures, think about one positive thing you just thought of. \n\ When you are ready with this you can either repeat it or type 'Next exercise'." ]],
     
     [r'Next exercise.',
-     [  "Now let's look at this breathing a bit more closely. \n\ Repeat the following 10 times: Inhale for 4 seconds, hold your breath for 7 seconds, exhale for 8 seconds. When you are ready, you can go to the last exercise by typing 'last exercise'.'"]],
+     [  "Now let's look at this breathing a bit more closely. \n\ Repeat the following 10 times: Inhale for 4 seconds, hold your breath for 7 seconds, exhale for 8 seconds. When you are ready, you can go to the last exercise by typing 'Last exercise'.'"]],
     
-    [r'Continue',
-     [  "How does being %1 make you feel?",
-      "Do you enjoy being {}",
-      "Why do you tell me you're {}",
-      "Why do you think you're {}"]],
-    
-    [r'Are you ([^\?]*)\??',
-     [  "Why does it matter whether I am {}",
+    [r'Last Exercise',
+     [  "Ok. In the last exercise we connect the breathing with a sound. \n\ Please repeat the following 20 times: Inhale as best as you can and \n\ exhale while making a sound ('mhhmm', 'ohmmm', etc.) that feel comfortable. \n\ Type 'I am here.' whenever you feel that you are finished. ",
       "Would you prefer it if I were not {}",
       "Perhaps you believe I am %1.",
       "I may be %1 -- what do you think?"]],
+        
+    [r'I am here.',
+     [  "How do you feel now?",
+      "Do you enjoy it?"]],
     
-    [r'What (.*)',
-     [  "Why do you ask?",
-      "How would an answer to that help you?",
-      "What do you think?"]],
+    [r'(.*) yes (.*)',
+     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
     
-    [r'How (.*)',
-     [  "How do you suppose?",
-      "Perhaps you can answer your own question.",
-      "What is it you're really asking?"]],
+    [r'(.*) no (.*)',
+     [  "I am sorry to hear that. If something is bothering you, press 'q' to change the topic and talk with me about your sorrows, press 'q' twice to end chatting with me."]],
     
-    [r'Because (.*)',
-     [  "Is that the real reason?",
-      "What other reasons come to mind?",
-      "Does that reason apply to anything else?",
-      "If %1, what else must be true?"]],
+    [r'(.*) good (.*)',
+     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
     
-    [r'(.*) sorry (.*)',
-     [  "There are many times when no apology is needed.",
-      "What feelings do you have when you apologize?"]],
+    [r'(.*) fine (.*)',
+     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+    
+    [r'(.*) nice (.*)',
+     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+    
+    [r'(.*) no (.*)',
+     [  "I am sorry to hear that. If something is bothering you, press 'q' to change the topic and talk with me about your sorrows."]],
+    
+    [r'q',
+     [  "Thank you for letting me guide you. See you soon, my young padawan."]],
+    
+    ]
+
+######################################
+##                                  ##
+## Talking with Jordan about Corona ##
+##                                  ##
+######################################
+
+## create library for talking about Corona
+# The content of this library is based on discussing mental health and other issues with other people
+# A part of this content is also based on the package eliza.py
+# I have to admit, that this library can definitely be more elaborate on corona stuff. I guess, I will work on that after the deadline.
+
+library_corona = [
+    [r'Hi(.*).',
+     [  "Hi, my friend. How is quarantine life?."]],
     
     [r'Hello(.*)',
-     [  "Hello... I'm glad you could drop by today.",
-      "Hi there... how are you today?",
-      "Hello, how are you feeling today?"]],
+     [  "Hi, my friend. How is quarantine life?."]],
+    
+    [r'Hey(.*)',
+     [  "Hi, my friend. How is quarantine life?."]],
+    
+    [r'Yo(.*)',
+     [  "Hi, my friend. How is quarantine life?."]],    
+
+    [r'Ok(.*)',
+     [  "Sounds good for now, I guess. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+    
+    [r'(.*) good (.*)',
+     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+    
+    [r'(.*) well (.*)',
+     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+    
+    [r'(.*) fine (.*)',
+     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+    
+    [r'(.*) nice (.*)',
+     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+    
+    [r'(.*) bad (.*)',
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+    
+    [r'(.*) crazy (.*)',
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+    
+    [r'(.*) not well (.*)',
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+    
+    [r'(.*) shit (.*)',
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+    
+    [r'crazy world'
+     [   "The media is crazy right?",
+      "Did you see what Trump posted on Twitter today?"
+      "Man, the economy will friggin die."
+      "Doing some sports could help as well!"]],  
+
+    [r'(.*) yes (.*)',
+     [  "Nice that we agree on that."]],
+    
+    [r'(.*) agree (.*)',
+     [  "Nice that we agree on that."]],
+
+    [r'(.*) agreed (.*)',
+     [  "Nice that we agree on that."]],
+    
+    [r'(.*) no (.*)',
+     [  "Well, you should have a look then."]],
+
+    [r'What can I do to stay sane?',
+     [  "You could go out for a walk.",
+      "You could meet someone with 1.5 meters distance.",
+      "You could talk to a friend",
+      "Doing some sports could help as well!"]],
+    
+    [r'What can I do to stay sane?',
+     [  "You could go out for a walk.",
+      "You could meet someone with 1.5 meters distance.",
+      "You could talk to a friend",
+      "Doing some sports could help as well!"]],
+        
+    [r'(.*) suggestions (.*)',
+     [  "You could go out for a walk.",
+      "You could meet someone with 1.5 meters distance.",
+      "You could talk to a friend"
+      "Doing some sports could help as well!"]],
+    
+    [r'(.*) insane (.*)',
+     [  "I understand. This is a special situation.",
+      "How are you currently handling it?",
+      "Do you have someone to talk to except me?."]],
+
+    [r'I don\'?t (.*)',
+     [  "Don't you really {}",
+      "Why don't you {}",
+      "Do you want to {}"]],
+    
+    [r'I feel (.*)',
+     [  "Good, tell me more about these feelings.",
+      "Do you often feel {}",
+      "When do you usually feel {}",
+      "When you feel %1, what do you do?"]],
+    
+    [r'I have (.*)',
+     [  "Why do you tell me that you've {}",
+      "Have you really {}",
+      "Now that you have %1, what will you do next?"]],
+    
+    [r'(.*)\?',
+     [  "Why do you ask that?",
+      "Perhaps the answer lies within yourself?",
+      "Why don't you tell me?"]],
+    
+    [r'I would (.*)',
+     [  "Could you explain why you would {}",
+      "Why would you {}",
+      "Who else knows that you would {}"]],
+    
+    [r'Is there (.*)',
+     [  "Do you think there is {}",
+      "It's likely that there is %1.",
+      "Would you like there to be {}"]],
     
     [r'I think (.*)',
      [  "Do you doubt {}",
@@ -654,65 +778,6 @@ library_meditating = [
       "I see.  And what does that tell you?",
       "How does that make you feel?",
       "How do you feel when you say that?"]]
-    ]
-    
-
-######################################
-##                                  ##
-## Talking with Jordan about Corona ##
-##                                  ##
-######################################
-
-## create library for talking about Corona
-library_corona = [
-    
-    [r'What can I do to stay sane?',
-     [  "You could go out for a walk.",
-      "You could meet someone with 1.5 meters distance.",
-      "You could talk to a friend",
-      "Doing some sports could help as well!"]],
-        
-    [r'(.*) suggestions (.*)',
-     [  "You could go out for a walk.",
-      "You could meet someone with 1.5 meters distance.",
-      "You could talk to a friend"
-      "Doing some sports could help as well!"]],
-    
-    [r'(.*) insane (.*)',
-     [  "I understand. This is a special situation.",
-      "How are you currently handling it?",
-      "Do you have someone to talk to except me?."]],
-
-    [r'I don\'?t (.*)',
-     [  "Don't you really {}",
-      "Why don't you {}",
-      "Do you want to {}"]],
-    
-    [r'I feel (.*)',
-     [  "Good, tell me more about these feelings.",
-      "Do you often feel {}",
-      "When do you usually feel {}",
-      "When you feel %1, what do you do?"]],
-    
-    [r'I have (.*)',
-     [  "Why do you tell me that you've {}",
-      "Have you really {}",
-      "Now that you have %1, what will you do next?"]],
-    
-    [r'(.*)\?',
-     [  "Why do you ask that?",
-      "Perhaps the answer lies within yourself?",
-      "Why don't you tell me?"]],
-    
-    [r'I would (.*)',
-     [  "Could you explain why you would {}",
-      "Why would you {}",
-      "Who else knows that you would {}"]],
-    
-    [r'Is there (.*)',
-     [  "Do you think there is {}",
-      "It's likely that there is %1.",
-      "Would you like there to be {}"]],
     
     [r'q',
      [  "Thank you for talking with me, and #staysafe!",
