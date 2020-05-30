@@ -9,22 +9,49 @@ import re # import regular expressions for the appropriate access to the librari
 import random # import random to pick a random answer for Jordan from the libraries
 from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating # import libraries
 
-topics = ['smalltalk', 'caring', 'cursing', 'meditating', 'corona']
-
 
 def choose_Jordan(): 
+    
+        topics = [library_smalltalk, library_caring, library_cursing, library_meditating, library_corona]
         
-        i = topics[0]
+        while True:
+            print("Welcome. My name is Jordan. You can now choose a topic that we can talk about.")
+            print("Press '0' to have some good old-fashioned smalltalk.")
+            print("Press '1' to tell me about your deepest sorrows and your destroyed soul.")
+            print("Press '2' to curse with me.")
+            print("Press '3' to talk about Corona.")
+            print("Press '4' to talk about Corona.")
+            # execute this welcome text and tell user what to press in order to pick a topic.
+            
+            choice = input(">>> ")
+            # initialize input
+            
+            if choice == '0': # determine which key to press to initiate the specific topic
+                print("Alrighty, let's do some chitchatting.")# initiate welcome text for specific topic
+                print("Don't forget that I am sensitive to punctuation.")
+            if choice == '1':
+                print("Please tell me about your deepest sorrows and your destroyed soul.")
+                print("Don't forget that I am sensitive to punctuation.")  
+            if choice == '2':
+                print("Make yourself ready. let's insult each other!")
+                print("Don't forget that I am sensitive to punctuation.")
+            if choice == '3':
+                print("Ok then, let's talk about Corona.")
+                print("Don't forget that I am sensitive to punctuation..")
+            if choice == '4':
+                print("I will be your guide in this meditation.")
+                print("Don't forget that I am sensitive to punctuation..")
+            if choice == 'q': # if user wants to quit
+                break
+            else: # if user pressed the wrong key.
+                print("Try again.")
         
-        library_keys = str('library' + i)
-        library_values = str('library' + i)
-        
-        keys = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library_keys)) 
-        # list(map()) applies a function to all elements of a specified object, in this case the cursing library
-        # lambda makes sure that re.compile is applied in a certain way to all elements of the library without being case-sensitive
-        # re.compile makes sure that the elemets are turned into objects that can be matched later to another item in the library    
-        values = list(map(lambda x:x[1],library_values))
-        # same here, but here we pick the second argument in the list x[1], which entails Jordan's answers
+            keys = list(map(lambda x:re.compile(x[0], re.IGNORECASE), topics[choice])) 
+            # list(map()) applies a function to all elements of a specified object, in this case the cursing library
+            # lambda makes sure that re.compile is applied in a certain way to all elements of the library without being case-sensitive
+            # re.compile makes sure that the elemets are turned into objects that can be matched later to another item in the library    
+            values = list(map(lambda x:x[1],topics[choice]))
+            # same here, but here we pick the second argument in the list x[1], which entails Jordan's answers
         
     
         while True:
@@ -49,26 +76,7 @@ def choose_Jordan():
             resp = resp.format(word)
             print(resp) # print Jordan's answer
     
-while True:
-    print("Welcome. My name is Jordan. You can now choose a topic that we can talk about.")
-    print("Press '1' to have some good old-fashioned smalltalk.")
-    print("Press '2' to tell me about your deepest sorrows and your destroyed soul.")
-    print("Press '3' to curse with me.")
-    print("Press '4' to talk about Corona.")
-    # execute this welcome text and tell user what to press in order to pick a topic.
-    
-    choice = input(">>> ")
-    # initialize input
     
     
-    if choice == '3' : # determine which key to press to initiate the specific topic
-        i = topics[2]
-        print("Alrighty, let's insult each other.") # introduction text for specific topic
-        print("Don't forget that I am sensitive to punctuation.")
-        choose_Jordan()
-    elif choice == 'q': # if user wants to quit
-        print("Goodbye then.")
-        break
-    else: # if user pressed the wrong key.
-        print("Try again.")
+
         
