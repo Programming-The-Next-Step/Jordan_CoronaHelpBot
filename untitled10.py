@@ -10,6 +10,8 @@ import random # later we want to pick a chatbot answer to a statement by random
 from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating
 # and here we imported all the topic libraries   
 
-from Jordan_chooseTest import choose_Jordan
+from Jordan_Class import Jordan as j
 
-choose_Jordan()
+j.start_Jordan(topics)
+
+
