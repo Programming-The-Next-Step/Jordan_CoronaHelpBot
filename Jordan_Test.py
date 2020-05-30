@@ -41,25 +41,3 @@ def testing_Jordan():
         resp = resp.format(word)
         print(resp) # print Jordan's answer
 
-while True:
-    print("Welcome. My name is Jordan. You can now choose a topic that we can talk about.")
-    print("Press '1' to have some good old-fashioned smalltalk.")
-    print("Press '2' to tell me about your deepest sorrows and your destroyed soul.")
-    print("Press '3' to curse with me.")
-    print("Press '4' to talk about Corona.")
-    # execute this welcome text and tell user what to press in order to pick a topic.
-    
-    choice = input(">>> ")
-    # initialize input
-    
-    
-    if choice == '3' : # determine which key to press to initiate the specific topic
-        print("Alrighty, let's insult each other.") # introduction text for specific topic
-        print("Don't forget that I am sensitive to punctuation.")
-        testing_Jordan() # initiate method
-    elif choice == 'q': # if user wants to quit
-        print("Goodbye then.")
-        break
-    else: # if user pressed the wrong key.
-        print("Try again.")
-        
