@@ -8,60 +8,44 @@ Created on Fri May 22 18:15:13 2020
 
 import re 
 import random # later we want to pick a chatbot answer to a statement by random
-from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating
+from Jordan_Library import dict_smalltalk, dict_caring, dict_cursing, dict_meditating, dict_corona  # import libraries
 # and here we imported all the topic libraries      
       
 class JordanBot:
     """
-    A class that enables different topics to chat about with Jordan.
-    It's recommended to not set any different properties.'
+    A class that represents the abilities of Jordan the chatbot.
     ...
     
-    Attributes 
-    ----------)
-    keys_smalltalk : list
-        Nested lists with strings
-    keys_cursing : list
-        Nested lists with strings
-    keys_caring : list
-        Nested lists with strings
-    keys_corona : list
-        Nested lists with strings
-    keys_meditating : list
-        Nested lists with strings
-    values_smalltalk : list
-        Nested lists with strings
-    values_cursing : list
-        Nested lists with strings
-    values_caring : list
-        Nested lists with strings
-    values_corona : list
-        Nested lists with strings
-    values_meditating : list
-        Nested lists with strings  
+    Attributes
+    ----------
+    name : str
+        user can insert name, which will later be shown in the chat.
+ 
     Methods 
     ----------
-    smalltalk_Jordan(userInput)
-        function that initiates small-talk with Jordan
-    cursing_Jordan(userInput)
-        function that initiates cursing with Jordan
-    meditating_Jordan(userInput)
-        function that initiates cursing with Jordan
-    caring_Jordan(userInput)
-        function that initiates a talk with Jordan about your sorrows
-    corona_Jordan(userInput)    
-        function that initiates a talk with Jordan about corona
+    name : str
+        user can insert name, which will later be shown in the chat.
+        
     """
     
-    def __init__(self): # this function is always called when a new object of the class is called
+    
+    def __init__(self, name): # this function is always called when a new object of the class is called
         """
-        Constructing topics for Jordan. Takes no arguments.
+        Constructing topics for Jordan. Takes the user's name as an argument. 
         
         """        
-
-    def start_Jordan(self): 
         
-        topics = [library_smalltalk, library_caring, library_cursing, library_meditating, library_corona]
+        self.name = name
+        
+        
+    def chat(self): 
+        """
+        A function that enables chatting with Jordan after picking a topic.
+        Take no arguments.
+        
+        """       
+        
+        topics = [dict_smalltalk, dict_caring, dict_cursing, dict_meditating, dict_corona]
                 
         while True:
             print("Welcome. My name is Jordan. You can now choose a topic that we can talk about.")
@@ -95,38 +79,40 @@ class JordanBot:
             else: # if user pressed the wrong key.
                 print("Try again.")
             
-            library = topics[int(choice)]
-            keys = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library)) 
+            edition = topics[int(choice)]
+            statement = list(map(lambda x:re.compile(x[0], re.IGNORECASE), edition)) 
             # list(map()) applies a function to all elements of a specified object, in this case the cursing library
             # lambda makes sure that re.compile is applied in a certain way to all elements of the library without being case-sensitive
             # re.compile makes sure that the elemets are turned into objects that can be matched later to another item in the library    
-            values = list(map(lambda x:x[1], library))
+            answer = list(map(lambda x:x[1], edition))
             # same here, but here we pick the second argument in the list x[1], which entails Jordan's answers
             
         
             while True:
-                userInput = input(">>> ") # this allows for the user to type in keys
+                userInput = input(' ' + self.name + ' >>> ') # this allows for the user to type in keys
                 resp = "I did not understand what you said. Also, I am sensitive to punctuation." # initalize response variable
                 counter = 0  # initalize counter
-                while resp == "I did not understand what you said. Also, I am sensitive to punctuation." and counter < len(keys): # determine when to start my loop
-                    for i in range(0, len(keys)): # loop through the indexed library
-                        match = keys[i].match(userInput) # look if input of the user matches with one of the words in the library
+                while resp == "I did not understand what you said. Also, I am sensitive to punctuation." and counter < len(statement): # determine when to start my loop
+                    for i in range(0, len(statement)): # loop through the indexed library
+                        match = statement[i].match(userInput) # look if input of the user matches with one of the words in the library
                         if match:
-                            word = keys[i].split(userInput)[1]  # We have to take the first element of this list
-                            resp = random.choice(values[i]) # if there is a match, pick a random answer from x[1]
+                            word = statement[i].split(userInput)[1]  # We have to take the first element of this list
+                            resp = random.choice(answer[i]) # if there is a match, pick a random answer from x[1]
                         counter += 1 # make sure that the counter is now + 1 so it does not write the initialized response from the beginning but continues with the loop
                                      # if there is no match though, then it will write the initialized answer
-                
                 if userInput == 'q':
-                    print(random.choice(values[i]))
+                    print(random.choice(answer[i]))
                     print("---------------------------------")
                     print("Do you want to choose another topic? Pick below or press 'q' to quit for realsies.")
                     print("---------------------------------")
                     break
                 resp = resp.format(word)
-                print(resp) # print Jordan's answer
-        
-        
+                print('____________')
+                print('                                                    ')
+                print('Jordan >>> ' + resp) # print Jordan's answer
+                
+
+
         
     
             
