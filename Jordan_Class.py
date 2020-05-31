@@ -4,12 +4,14 @@ Created on Fri May 22 18:15:13 2020
 
 @author: User
 """
-import re # importing regular expression operations, which we need later to access the libraries
+# importing regular expression operations, which we need later to access the libraries
+
+import re 
 import random # later we want to pick a chatbot answer to a statement by random
 from Jordan_Libraries import library_smalltalk, library_caring, library_cursing, library_corona, library_meditating
 # and here we imported all the topic libraries      
       
-class Jordan:
+class JordanBot:
     """
     A class that enables different topics to chat about with Jordan.
     It's recommended to not set any different properties.'
@@ -56,9 +58,10 @@ class Jordan:
         Constructing topics for Jordan. Takes no arguments.
         
         """        
-        self.topics = [library_smalltalk, library_caring, library_cursing, library_meditating, library_corona]
 
     def start_Jordan(self): 
+        
+        topics = [library_smalltalk, library_caring, library_cursing, library_meditating, library_corona]
                 
         while True:
             print("Welcome. My name is Jordan. You can now choose a topic that we can talk about.")
@@ -92,7 +95,7 @@ class Jordan:
             else: # if user pressed the wrong key.
                 print("Try again.")
             
-            library = self.topics[int(choice)]
+            library = topics[int(choice)]
             keys = list(map(lambda x:re.compile(x[0], re.IGNORECASE), library)) 
             # list(map()) applies a function to all elements of a specified object, in this case the cursing library
             # lambda makes sure that re.compile is applied in a certain way to all elements of the library without being case-sensitive
