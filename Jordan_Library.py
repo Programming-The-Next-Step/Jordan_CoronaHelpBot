@@ -1,10 +1,21 @@
-##########################################################
-##                                                      ##
-## grammar lesson 1: first person becomes second person ##
-##                                                      ##
-##########################################################
+# ====================================================================== #
+#                                                                        #
+# This file contains the Jordan library. It contains all the             #
+# conversational content that can be found in the dictionairies          #
+# (adapted from eliza.py).                                               #
+#                                                                        #
+# ====================================================================== #
 
-
+dict_example = [
+    # regex r' : make it so it knows a raw string is coming
+    # {} : placeholder for user input to use in an answer
+    # (.*) : placeholder for anything/ wildcard
+    # ([^\?]*)\?: another wilcard
+    # can\'t : another wildcard making sure you can write cant as well as can't
+    
+    [r'user input keyword string {}', # position x[0]
+     [  "Jordan's answer"]] # position x[1]
+    ]
 
 ##############################
 ##                          ##
@@ -12,8 +23,9 @@
 ##                          ##
 ##############################
 
-## create the library for small-talk with Jordan
-# I created the content mainly myself based on letting other people talk with Jordan and see what they would ask
+# I created the content mainly myself based on letting other people talk with 
+# Jordan and see what they would ask.
+
 dict_smalltalk = [
     [r'Hi(.*)',
      [  "Hi! Whazzup?"]],
@@ -60,7 +72,8 @@ dict_smalltalk = [
     
     [r'(.*) bad (.*)',
      [  "Oh, I am sorry to hear that!",
-      "If you want you can start me anew and switch to the topic by pressing 'q' ",
+      "If you want you can start me anew and switch to the topic by "
+      "pressing 'q' ",
       "Oh no!"]],
     
     [r'(.*) not well (.*)',
@@ -76,7 +89,7 @@ dict_smalltalk = [
      [  "Yeah, me too!",
       "Why do you want {}",
       "What would you do if you got {}",
-      "If you got %1, then what would you do?"]],
+      "If you got {}, then what would you do?"]],
     
     [r'Nothing (.*)',
      [  "Well, how are you doing?",
@@ -136,8 +149,8 @@ dict_smalltalk = [
 ##                                      ##
 ##########################################
 
-## create the library to talk with Jordan about your sorrows
-# This content is mainly taken from the eliza.py package
+
+# This content is mainly taken from the eliza.py package but slightly adapted.
 dict_caring = [
     
     [r'Hi(.*)',
@@ -182,18 +195,18 @@ dict_caring = [
     
     [r'Why don\'?t you ([^\?]*)\??',
      [  "Do you really think I don't {}",
-      "Perhaps eventually I will %1.",
+      "Perhaps eventually I will {}.",
       "Do you really want me to {}"]],
     
     [r'Why can\'?t I ([^\?]*)\??',
      [  "Do you think you should be able to {}",
-      "If you could %1, what would you do?",
+      "If you could {}, what would you do?",
       "I don't know -- why can't you {}",
       "Have you really tried?"]],
     
     [r'I can\'?t (.*)',
      [  "How do you know you can't {}",
-      "Perhaps you could %1 if you tried.",
+      "Perhaps you could {} if you tried.",
       "What would it take for you to {}"]],
     
     [r'I am (.*)',
@@ -201,7 +214,7 @@ dict_caring = [
       "How do you feel about being {}"]],
     
     [r'I\'?m (.*)',
-     [  "How does being %1 make you feel?",
+     [  "How does being {} make you feel?",
       "Do you enjoy being {}",
       "Why do you tell me you're {}",
       "Why do you think you're {}"]],
@@ -209,8 +222,8 @@ dict_caring = [
     [r'Are you ([^\?]*)\??',
      [  "Why does it matter whether I am {}",
       "Would you prefer it if I were not {}",
-      "Perhaps you believe I am %1.",
-      "I may be %1 -- what do you think?"]],
+      "Perhaps you believe I am {}.",
+      "I may be {} -- what do you think?"]],
     
     [r'What (.*)',
      [  "Why do you ask?",
@@ -226,7 +239,7 @@ dict_caring = [
      [  "Is that the real reason?",
       "What other reasons come to mind?",
       "Does that reason apply to anything else?",
-      "If %1, what else must be true?"]],
+      "If {}, what else must be true?"]],
     
     [r'(.*) sorry (.*)',
      [  "There are many times when no apology is needed.",
@@ -259,28 +272,28 @@ dict_caring = [
     
     [r'Is it (.*)',
      [  "Do you think it is {}",
-      "Perhaps it's %1 -- what do you think?",
-      "If it were %1, what would you do?",
-      "It could well be that %1."]],
+      "Perhaps it's {} -- what do you think?",
+      "If it were {}, what would you do?",
+      "It could well be that {}."]],
     
     [r'It is (.*)',
      [  "You seem very certain.",
-      "If I told you that it probably isn't %1, what would you feel?"]],
+      "If I told you that it probably isn't {}, what would you feel?"]],
     
     [r'Can you ([^\?]*)\??',
      [  "What makes you think I can't {}",
-      "If I could %1, then what?",
+      "If I could {}, then what?",
       "Why do you ask if I can {}"]],
     
     [r'Can I ([^\?]*)\??',
-     [  "Perhaps you don't want to %1.",
+     [  "Perhaps you don't want to {}.",
       "Do you want to be able to {}",
-      "If you could %1, would you?"]],
+      "If you could {}, would you?"]],
     
     [r'You are (.*)',
       [ "Why do you think I am {}",
        "Does it please you to think that I'm {}",
-       "Perhaps you would like me to be %1.",
+       "Perhaps you would like me to be {}.",
        "Perhaps you're really talking about yourself?"]],
 
     [r'You\'?re (.*)',
@@ -297,12 +310,12 @@ dict_caring = [
      [  "Good, tell me more about these feelings.",
       "Do you often feel {}",
       "When do you usually feel {}",
-      "When you feel %1, what do you do?"]],
+      "When you feel {}, what do you do?"]],
     
     [r'I have (.*)',
      [  "Why do you tell me that you've {}",
       "Have you really {}",
-      "Now that you have %1, what will you do next?"]],
+      "Now that you have {}, what will you do next?"]],
     
     [r'I would (.*)',
      [  "Could you explain why you would {}",
@@ -311,13 +324,13 @@ dict_caring = [
     
     [r'Is there (.*)',
      [  "Do you think there is {}",
-      "It's likely that there is %1.",
+      "It's likely that there is {}.",
       "Would you like there to be {}"]],
     
     [r'My (.*)',
-     [  "I see, your %1.",
+     [  "I see, your {}.",
       "Why do you say that your {}",
-      "When your %1, how do you feel?"]],
+      "When your {}, how do you feel?"]],
     
     [r'You (.*)',
      [  "We should be discussing you, not me.",
@@ -331,7 +344,7 @@ dict_caring = [
      [  "What would it mean to you if you got {}",
       "Why do you want {}",
       "What would you do if you got {}",
-      "If you got %1, then what would you do?"]],
+      "If you got {}, then what would you do?"]],
     
     [r'(.*) mother(.*)',
      [  "Tell me more about your mother.",
@@ -371,7 +384,7 @@ dict_caring = [
       "Let's change focus a bit... Tell me about your friends.",
       "Let's change focus a bit... Tell me about your hobbies.",
       "Very interesting.",
-      "%1.",
+      "{}.",
       "I see.  And what does that tell you?",
       "How does that make you feel?",
       "How do you feel when you say that?"]]
@@ -384,8 +397,8 @@ dict_caring = [
 ##                     ##
 #########################
 
-## create library for cursing with Jordan aka evil Jordan
-# The content of this library is based on movies, books, and several internet sources
+# The content of this library is based on movies, books, and several 
+# internet sources. I also call her/him evil Jordan.
 
 dict_cursing = [
     
@@ -417,51 +430,91 @@ dict_cursing = [
     [r'(.*)\!',
      [ "You’re the reason God created the middle finger.",
       "You’re a grey sprinkle on a rainbow cupcake.",
-      "If your brain was dynamite, there wouldn’t be enough to blow your hat off.",
+      "If your brain was dynamite, there wouldn’t be enough to blow your hat "
+      "off.",
       "You are more disappointing than an unsalted pretzel.",
-      "Light travels faster than sound which is why you seemed bright until you spoke.",
-      "You know, you are a classic example of the inverse ratio between the size of the mouth and the size of the brain.",
-      "To call you stupid would be an insult to stupid people! I've known sheep that could outwit you. I've worn dresses with higher IQs.",
-      "Your heart is full of unwashed socks. Your soul is full of gunk ...The three words that best describe you are as follows, and I quote, Stink, stank, stunk!",
+      "Light travels faster than sound which is why you seemed bright until "
+      "you spoke.",
+      "You know, you are a classic example of the inverse ratio between the "
+      "size of the mouth and the size of the brain.",
+      "To call you stupid would be an insult to stupid people! I've known "
+      "sheep that could outwit you. I've worn dresses with higher IQs.",
+      "Your heart is full of unwashed socks. Your soul is full of gunk ... "
+      "The three words that best describe you are as follows, and I quote, "
+      "Stink, stank, stunk!",
       "Hold still. I’m trying to imagine you with personality.",
       "Your face makes onions cry.",
-      "Your brain's so minute that if a hungry cannibal cracked your head open, there wouldn't be enough to cover a small water biscuit.",
+      "Your brain's so minute that if a hungry cannibal cracked your head "
+      "open, there wouldn't be enough to cover a small water biscuit.",
       "Stupid, fat hobbit.",
       "Keep rolling your eyes, you might eventually find a brain.",
-      "Fool of a Took! Throw yourself in next time and rid us of your stupidity!",
+      "Fool of a Took! Throw yourself in next time and rid us of your "
+      "stupidity!",
       "OH MY GOD! IT SPEAKS!",
       "You are so full of shit, the toilet’s jealous.",
       "You're the reason the gene pool needs a lifeguard.",
-      "You must have been born on the highway cos' that's where most accidents happen.",
-      "Is your ass jealous of the amount of shit that just came out of your mouth",
-      "When you were born, the doctor threw you out the window and the window threw you back.",
-      "I think... no, I am positive... that you are the most unattractive being I have ever met in my entire life. In the short time we've been together, you have demonstrated every loathsome characteristic of the human personality and even discovered a few new ones. You are physically repulsive, intellectually retarded, you're morally reprehensible, vulgar, insensitive, selfish, stupid, you have no taste, a lousy sense of humor and you smell. You're not even interesting enough to make me sick.",
-      "You are a fart factory, slug-slimed sack of rat guts in cat vomit. A cheesy scab picked pimple squeezing finger bandage. A week old maggot burger with everything on it and flies on the side."
+      "You must have been born on the highway cos' that's where most "
+      "accidents happen.",
+      "Is your ass jealous of the amount of shit that just came out of "
+      "your mouth",
+      "When you were born, the doctor threw you out the window and the "
+      "window threw you back.",
+      "I think... no, I am positive... that you are the most unattractive "
+      "being I have ever met in my entire life. In the short time we've been "
+      "together, you have demonstrated every loathsome characteristic of the "
+      "human personality and even discovered a few new ones. You are "
+      "physically repulsive, intellectually retarded, you're morally "
+      "reprehensible, vulgar, insensitive, selfish, stupid, you have no "
+      "taste, a lousy sense of humor and you smell. You're not even "
+      "interesting enough to make me sick.",
+      "You are a fart factory, slug-slimed sack of rat guts in cat vomit. "
+      "A cheesy scab picked pimple squeezing finger bandage. A week old "
+      "maggot burger with everything on it and flies on the side."
       ]],
     
     [r'(.*)\.',
      [ "You’re the reason God created the middle finger.",
       "You’re a grey sprinkle on a rainbow cupcake.",
-      "If your brain was dynamite, there wouldn’t be enough to blow your hat off.",
+      "If your brain was dynamite, there wouldn’t be enough to blow your hat "
+      "off.",
       "You are more disappointing than an unsalted pretzel.",
-      "Light travels faster than sound which is why you seemed bright until you spoke.",
-      "You know, you are a classic example of the inverse ratio between the size of the mouth and the size of the brain.",
-      "To call you stupid would be an insult to stupid people! I've known sheep that could outwit you. I've worn dresses with higher IQs.",
-      "Your heart is full of unwashed socks. Your soul is full of gunk ...The three words that best describe you are as follows, and I quote, Stink, stank, stunk!",
+      "Light travels faster than sound which is why you seemed bright until "
+      "you spoke.",
+      "You know, you are a classic example of the inverse ratio between the "
+      "size of the mouth and the size of the brain.",
+      "To call you stupid would be an insult to stupid people! I've known "
+      "sheep that could outwit you. I've worn dresses with higher IQs.",
+      "Your heart is full of unwashed socks. Your soul is full of gunk ... "
+      "The three words that best describe you are as follows, and I quote, "
+      "Stink, stank, stunk!",
       "Hold still. I’m trying to imagine you with personality.",
       "Your face makes onions cry.",
-      "Your brain's so minute that if a hungry cannibal cracked your head open, there wouldn't be enough to cover a small water biscuit.",
+      "Your brain's so minute that if a hungry cannibal cracked your head "
+      "open, there wouldn't be enough to cover a small water biscuit.",
       "Stupid, fat hobbit.",
       "Keep rolling your eyes, you might eventually find a brain.",
-      "Fool of a Took! Throw yourself in next time and rid us of your stupidity!",
+      "Fool of a Took! Throw yourself in next time and rid us of your "
+      "stupidity!",
       "OH MY GOD! IT SPEAKS!",
       "You are so full of shit, the toilet’s jealous.",
       "You're the reason the gene pool needs a lifeguard.",
-      "You must have been born on the highway cos' that's where most accidents happen.",
-      "Is your ass jealous of the amount of shit that just came out of your mouth",
-      "When you were born, the doctor threw you out the window and the window threw you back.",
-      "I think... no, I am positive... that you are the most unattractive being I have ever met in my entire life. In the short time we've been together, you have demonstrated every loathsome characteristic of the human personality and even discovered a few new ones. You are physically repulsive, intellectually retarded, you're morally reprehensible, vulgar, insensitive, selfish, stupid, you have no taste, a lousy sense of humor and you smell. You're not even interesting enough to make me sick.",
-      "You are a fart factory, slug-slimed sack of rat guts in cat vomit. A cheesy scab picked pimple squeezing finger bandage. A week old maggot burger with everything on it and flies on the side."
+      "You must have been born on the highway cos' that's where most "
+      "accidents happen.",
+      "Is your ass jealous of the amount of shit that just came out of "
+      "your mouth",
+      "When you were born, the doctor threw you out the window and the "
+      "window threw you back.",
+      "I think... no, I am positive... that you are the most unattractive "
+      "being I have ever met in my entire life. In the short time we've been "
+      "together, you have demonstrated every loathsome characteristic of the "
+      "human personality and even discovered a few new ones. You are "
+      "physically repulsive, intellectually retarded, you're morally "
+      "reprehensible, vulgar, insensitive, selfish, stupid, you have no "
+      "taste, a lousy sense of humor and you smell. You're not even "
+      "interesting enough to make me sick.",
+      "You are a fart factory, slug-slimed sack of rat guts in cat vomit. "
+      "A cheesy scab picked pimple squeezing finger bandage. A week old "
+      "maggot burger with everything on it and flies on the side."
       ]],
     
     [r'Are you ([^\?]*)\??',
@@ -505,56 +558,89 @@ dict_cursing = [
 ##                                      ##
 ##########################################
 
-## create the library to talk with Jordan about your sorrows
-# The content of this library is based on  my memory of when I did some courses on meditating and mindfulness
+# The content of this library is based on my memory of when I did some 
+# courses on meditating and mindfulness.
 
 dict_meditating = [
 
     [r'Hi(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. \n You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n "
+      "You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Hello(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. \n You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n "
+      "You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Hey(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. \n You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n "
+      "You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'Yo(.*)',
-     [  "Welcome. Please bring yourself into a comfortable position. \n You can sit or lie down. Write 'I am ready.' to continue."]],
+     [  "Welcome. Please bring yourself into a comfortable position. \n "
+      "You can sit or lie down. Write 'I am ready.' to continue."]],
     
     [r'I am ready.',
-     ["Great. First of all, I would like you to take deep breaths with your eyes closed for about 10 minutes (you can set a timer). \n While you are breathing, examine all your body parts from head, over your shoulders, your belly, your legs and your feet. \n Determine how each and every of these feel today. When you're done, type 'I am done.'" ]],
+     ["Great. First of all, I would like you to take deep breaths with "
+      "your eyes closed for about 10 minutes (you can set a timer). \n "
+      "While you are breathing, examine all your body parts from head, over "
+      "your shoulders, your belly, your legs and your feet. \n Determine "
+      "how each and every of these feel today. When you're done, "
+      "type 'I am done.'" ]],
     
     [r'I am done.',
-     [ "Nice work. Next, bring yourself in a cross-legged position, if you aren't yet, and think about three things that you like about yourself \n and three things that you like about your life right now. With your arms make a giving gesture first to yourself and then into the room while breathing in and out. \n With each pair of gestures, think about one positive thing you just thought of. \n When you are ready with this you can either repeat it or type 'Next exercise'." ]],
+     [ "Nice work. Next, bring yourself in a cross-legged position, if you "
+      "aren't yet, and think about three things that you like about yourself "
+      "\n and three things that you like about your life right now. With your "
+      "arms make a giving gesture first to yourself and then into the room "
+      "while breathing in and out. \n With each pair of gestures, think about "
+      "one positive thing you just thought of. \n When you are ready with "
+      "this you can either repeat it or type 'Next exercise'." ]],
     
     [r'Next exercise',
-     [  "Now let's look at this breathing a bit more closely. \n Repeat the following 10 times: Inhale for 4 seconds, hold your breath for 7 seconds, exhale for 8 seconds. When you are ready, you can go to the last exercise by typing 'Last exercise'.'"]],
+     [  "Now let's look at this breathing a bit more closely. \n Repeat the "
+      "following 10 times: Inhale for 4 seconds, hold your breath for 7 "
+      "seconds, exhale for 8 seconds. When you are ready, you can go to the "
+      "last exercise by typing 'Last exercise'.'"]],
     
     [r'Last Exercise',
-     [  "Ok. In the last exercise we connect the breathing with a sound. \n Please repeat the following 20 times: Inhale as best as you can and \n exhale while making a sound ('mhhmm', 'ohmmm', etc.) that feel comfortable. \n Type 'I am here.' whenever you feel that you are finished. "]],
+     [  "Ok. In the last exercise we connect the breathing with a sound. "
+      "\n Please repeat the following 20 times: Inhale as best as you can "
+      "and \n exhale while making a sound ('mhhmm', 'ohmmm', etc.) that "
+      "feel comfortable. \n Type 'I am here.' whenever you feel that "
+      "you are finished. "]],
         
     [r'I am here.',
      [  "How do you feel now?",
       "Do you enjoy it?"]],
     
     [r'yes (.*)',
-     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. \n Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+     [  "I am glad to hear that. Thank you for letting me guide you through "
+      "this meditation. \n Press 'q' once to change topic, press 'q' twice to "
+      "end chatting with me."]],
     
     [r'no (.*)',
-     [  "I am sorry to hear that. If something is bothering you, \n press 'q' to change the topic and talk with me about your sorrows, press 'q' twice to end chatting with me."]],
+     [  "I am sorry to hear that. If something is bothering you, \n press 'q' "
+      "to change the topic and talk with me about your sorrows, press 'q' "
+      "twice to end chatting with me."]],
     
     [r'(.*) good (.*)',
-     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. \n Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+     [  "I am glad to hear that. Thank you for letting me guide you through "
+      "this meditation. \n Press 'q' once to change topic, press 'q' twice "
+      "to end chatting with me."]],
     
     [r'(.*) fine (.*)',
-     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. \n Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+     [  "I am glad to hear that. Thank you for letting me guide you through "
+      "this meditation. \n Press 'q' once to change topic, press 'q' twice "
+      "to end chatting with me."]],
     
     [r'(.*) nice (.*)',
-     [  "I am glad to hear that. Thank you for letting me guide you through this meditation. \n Press 'q' once to change topic, press 'q' twice to end chatting with me."]],
+     [  "I am glad to hear that. Thank you for letting me guide you through "
+      "this meditation. \n Press 'q' once to change topic, press 'q' twice "
+      "to end chatting with me."]],
        
     [r'q',
-     [  "Thank you for letting me guide you. See you soon, my young padawan."]],
+     [  "Thank you for letting me guide you. See you soon, my young "
+      "padawan."]],
     
     ]
 
@@ -564,10 +650,11 @@ dict_meditating = [
 ##                                  ##
 ######################################
 
-## create library for talking about Corona
-# The content of this library is based on discussing mental health and other issues with other people
-# A part of this content is also based on the package eliza.py
-# I have to admit, that this library can definitely be more elaborate on corona stuff. I guess, I will work on that after the deadline.
+# The content of this library is based on discussing mental health and other 
+# issues with other people. A part of this content is also based on the 
+# package eliza.py. I have to admit, that this library can definitely be 
+# more elaborate on corona stuff. I guess, I will work on that after the 
+# deadline.
 
 dict_corona = [
     [r'Hi(.*).',
@@ -583,31 +670,40 @@ dict_corona = [
      [  "Hi, my friend. How is quarantine life?."]],    
 
     [r'Ok(.*)',
-     [  "Sounds good for now, I guess. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+     [  "Sounds good for now, I guess. Well, if you want, you can complain to "
+      "me about how crazy the world is right now. If yes, type 'crazy world'."]],
     
     [r'(.*) good (.*)',
-     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+     [  "Great. Well, if you want, you can complain to me about how crazy "
+      "the world is right now. If yes, type 'crazy world'."]],
     
     [r'(.*) well (.*)',
-     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+     [  "Great. Well, if you want, you can complain to me about how crazy "
+      "the world is right now. If yes, type 'crazy world'."]],
     
     [r'(.*) fine (.*)',
-     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+     [  "Great. Well, if you want, you can complain to me about how crazy "
+      "the world is right now. If yes, type 'crazy world'."]],
     
     [r'(.*) nice (.*)',
-     [  "Great. Well, if you want, you can complain to me about how crazy the world is right now. If yes, type 'crazy world'."]],
+     [  "Great. Well, if you want, you can complain to me about how crazy "
+      "the world is right now. If yes, type 'crazy world'."]],
     
     [r'(.*) bad (.*)',
-     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay "
+      "sane, type 'What can I do to stay sane', or 'suggestions'."]],
     
     [r'(.*) crazy (.*)',
-     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay "
+      "sane, type 'What can I do to stay sane', or 'suggestions'."]],
     
     [r'(.*) not well (.*)',
-     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay "
+      "sane, type 'What can I do to stay sane', or 'suggestions'."]],
     
     [r'(.*) shit (.*)',
-     [  "Oh, I am sorry to hear that! If you want some suggestions to stay sane, type 'What can I do to stay sane', or 'suggestions'."]],
+     [  "Oh, I am sorry to hear that! If you want some suggestions to stay "
+      "sane, type 'What can I do to stay sane', or 'suggestions'."]],
     
     [r'crazy world',
      [   "The media is crazy right?",
@@ -659,12 +755,12 @@ dict_corona = [
      [  "Good, tell me more about these feelings.",
       "Do you often feel {}",
       "When do you usually feel {}",
-      "When you feel %1, what do you do?"]],
+      "When you feel {}, what do you do?"]],
     
     [r'I have (.*)',
      [  "Why do you tell me that you've {}",
       "Have you really {}",
-      "Now that you have %1, what will you do next?"]],
+      "Now that you have {}, what will you do next?"]],
     
     [r'(.*)\?',
      [  "Why do you ask that?",
@@ -678,7 +774,7 @@ dict_corona = [
     
     [r'Is there (.*)',
      [  "Do you think there is {}",
-      "It's likely that there is %1.",
+      "It's likely that there is {}.",
       "Would you like there to be {}"]],
     
     [r'I think (.*)',
@@ -703,28 +799,28 @@ dict_corona = [
     
     [r'Is it (.*)',
      [  "Do you think it is {}",
-      "Perhaps it's %1 -- what do you think?",
-      "If it were %1, what would you do?",
-      "It could well be that %1."]],
+      "Perhaps it's {} -- what do you think?",
+      "If it were {}, what would you do?",
+      "It could well be that {}."]],
     
     [r'It is (.*)',
      [  "You seem very certain.",
-      "If I told you that it probably isn't %1, what would you feel?"]],
+      "If I told you that it probably isn't {}, what would you feel?"]],
     
     [r'Can you ([^\?]*)\??',
      [  "What makes you think I can't {}",
-      "If I could %1, then what?",
+      "If I could {}, then what?",
       "Why do you ask if I can {}"]],
     
     [r'Can I ([^\?]*)\??',
-     [  "Perhaps you don't want to %1.",
+     [  "Perhaps you don't want to {}.",
       "Do you want to be able to {}",
-      "If you could %1, would you?"]],
+      "If you could {}, would you?"]],
     
     [r'You are (.*)',
       [ "Why do you think I am {}",
        "Does it please you to think that I'm {}",
-       "Perhaps you would like me to be %1.",
+       "Perhaps you would like me to be {}.",
        "Perhaps you're really talking about yourself?"]],
 
     [r'You\'?re (.*)',
@@ -741,12 +837,12 @@ dict_corona = [
      [  "Good, tell me more about these feelings.",
       "Do you often feel {}",
       "When do you usually feel {}",
-      "When you feel %1, what do you do?"]],
+      "When you feel {}, what do you do?"]],
     
     [r'I have (.*)',
      [  "Why do you tell me that you've {}",
       "Have you really {}",
-      "Now that you have %1, what will you do next?"]],
+      "Now that you have {}, what will you do next?"]],
     
     [r'I would (.*)',
      [  "Could you explain why you would {}",
@@ -755,13 +851,13 @@ dict_corona = [
     
     [r'Is there (.*)',
      [  "Do you think there is {}",
-      "It's likely that there is %1.",
+      "It's likely that there is {}.",
       "Would you like there to be {}"]],
     
     [r'My (.*)',
-     [  "I see, your %1.",
+     [  "I see, your {}.",
       "Why do you say that your {}",
-      "When your %1, how do you feel?"]],
+      "When your {}, how do you feel?"]],
     
     [r'You (.*)',
      [  "We should be discussing you, not me.",
@@ -775,7 +871,7 @@ dict_corona = [
      [  "What would it mean to you if you got {}",
       "Why do you want {}",
       "What would you do if you got {}",
-      "If you got %1, then what would you do?"]],
+      "If you got {}, then what would you do?"]],
     
     [r'(.*) mother(.*)',
      [  "Tell me more about your mother.",
@@ -813,7 +909,7 @@ dict_corona = [
      [  "Please tell me more.",
       "Let's change focus a bit... Tell me about your family.",
       "Very interesting.",
-      "%1.",
+      "{}.",
       "I see.  And what does that tell you?",
       "How does that make you feel?",
       "How do you feel when you say that?"]],
