@@ -21,7 +21,7 @@ setuptools.setup(
     author_email="marla.a.dressel@gmail.com",
     python_requires=">=3.6",
     url="https://github.com/Programming-The-Next-Step/Jordan_CoronaHelpBot",
-    packages=setuptools.find_packages(), # speciify dependencies
+    packages=setuptools.find_packages(), # specify dependencies
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
